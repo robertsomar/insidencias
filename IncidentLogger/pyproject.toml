@@ -1,0 +1,35 @@
+[project]
+name = "IncidentLogger"
+version = "1.0.0"
+description = "IncidentLogger"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Magno Efren", email = "magnoefren@email.com" }
+]
+
+dependencies = [
+    "flet==0.85.2",
+    "flet-charts==0.85.2",
+    "pillow==12.2.0",
+    "fpdf2==2.8.7",
+    "certifi",
+]
+
+[tool.flet]
+org = "com.fintech"
+product = "IncidentLogger"
+company = "IncidentLogger"
+copyright = "Copyright (C) 2026"
+
+[tool.flet.flutter.pubspec.dependency_overrides]
+webview_flutter_android = "4.10.1"
+
+[tool.flet.app]
+adaptive_icon_foreground = "assets/icon.png"
+path = "."
+
+
+# ── Optimización de tamaño ────────────────────────────────────
+[tool.flet.android]
+split_per_abi = true      # genera APK por arquitectura → ~40% menos
